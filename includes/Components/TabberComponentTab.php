@@ -14,7 +14,9 @@ class TabberComponentTab implements TabberComponent {
 
 	public function getTemplateData(): array {
 		$name = $this->name;
-		$id = $this->addTabPrefix ? "tabber-$name" : $name;
+		// begin wiki.gg: bring back legacy IDs for URL compatibility
+		$id = $name;
+		// end wiki.gg
 
 		return [
 			'label' => $this->label,

@@ -32,6 +32,8 @@ class TabNameHelper {
 		$existingIds[ $sanitizedId ] = $idCounter;
 		$parserOutput->setExtensionData( 'tabber-ids', $existingIds );
 
-		return $idCounter > 1 ? $sanitizedId . '_' . $idCounter : $sanitizedId;
+		// begin wiki.gg: always suffix panel IDs in the legacy manner
+		return $sanitizedId . '-' . ( $idCounter - 1 );
+		// end wiki.gg
 	}
 }
